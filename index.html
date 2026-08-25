@@ -1,5 +1,4 @@
 
-<br>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -49,7 +48,6 @@ background:rgba(255,255,255,.8);backdrop-filter:blur(8px);
 border:1px solid rgba(22,32,51,.08);border-radius:12px;
 padding:8px 12px;font-weight:800;font-size:13px;
 }
-
 .card{
 background:var(--panel);border:1px solid rgba(22,32,51,.08);
 border-radius:24px;box-shadow:var(--shadow);overflow:hidden;
@@ -121,47 +119,6 @@ border-radius:15px;padding:15px 18px;line-height:1.55;display:none;
 .solution.show{display:block}
 .mini{color:var(--muted);font-size:13px;text-align:center;margin-top:8px}
 .footer-note{color:#667085;text-align:center;font-size:12px;margin:14px 0 0}
-
-
-.hidden{display:none!important}
-.worksheet-launch{border:1px solid rgba(22,32,51,.10);cursor:pointer;color:var(--ink);font:inherit}
-.worksheet-launch:hover{background:#fff1d6}
-.worksheet-screen{padding:clamp(20px,4vw,36px)}
-.worksheet-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:20px}
-.worksheet-head h2{margin:6px 0 4px;font-size:clamp(26px,4vw,38px)}
-.worksheet-kicker{font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#7a4b00;background:#fff1d6;border-radius:999px;padding:7px 11px;display:inline-flex}
-.worksheet-back{border:0;border-radius:13px;padding:12px 18px;font-weight:900;cursor:pointer;background:#eef1f5;color:#344054}
-.worksheet-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0}
-.option-box{background:#fbfcfe;border:1px solid #e6eaf0;border-radius:16px;padding:16px}
-.option-box h3{margin:0 0 12px;font-size:15px}
-.segmented{display:flex;gap:8px;flex-wrap:wrap}
-.segmented button{border:2px solid #d8dee8;background:#fff;color:#344054;border-radius:11px;padding:9px 13px;font-weight:900;cursor:pointer}
-.segmented button.active{border-color:var(--accent);background:#fff0f2;color:var(--accent);box-shadow:0 0 0 2px rgba(232,77,91,.08)}
-.worksheet-generate{text-align:center;margin:16px 0}
-.worksheet-toolbar{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:18px 0}
-.worksheet-sheet{background:#fff;border:1px solid #e2e7ee;border-radius:18px;padding:26px;max-width:860px;margin:0 auto}
-.worksheet-sheet h2{text-align:center;margin:0 0 4px;font-size:28px}
-.worksheet-meta{text-align:center;color:var(--muted);font-weight:700;margin-bottom:22px}
-.worksheet-student-lines{display:flex;justify-content:space-between;gap:28px;margin:0 0 24px;font-weight:700}
-.worksheet-student-lines span{flex:1;border-bottom:1px solid #7d8597;padding-bottom:4px}
-.worksheet-list{display:grid;gap:24px}
-.worksheet-question{border-top:1px solid #edf0f4;padding-top:20px;break-inside:avoid}
-.worksheet-question:first-child{border-top:0;padding-top:0}
-.worksheet-qhead{display:flex;gap:8px;align-items:center;font-weight:900;margin-bottom:8px}
-.worksheet-numberline{background:var(--paper);border:1px solid #ece8dd;border-radius:14px;padding:8px 10px}
-.worksheet-numberline svg{width:100%;height:150px;overflow:visible}
-.worksheet-answer-line{border-bottom:1px solid #8d94a5;height:28px;margin-top:10px}
-.worksheet-reveal-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px}
-.worksheet-reveal-btn{border:1px solid #d7dde7;background:#fff;color:var(--accent);border-radius:10px;padding:7px 10px;font-weight:900;cursor:pointer}
-.worksheet-reveal-btn:hover{background:#fff0f2}
-.worksheet-revealed-answer{font-weight:900;color:var(--good);background:#eaf8f0;border-radius:10px;padding:8px 10px}
-@media(max-width:700px){
-.worksheet-options{grid-template-columns:1fr}
-.worksheet-sheet{padding:17px}
-.worksheet-student-lines{flex-direction:column;gap:15px}
-.worksheet-numberline svg{height:135px}
-}
-
 @media(max-width:650px){
 .top{align-items:flex-start;flex-direction:column}
 .stats{justify-content:flex-start}
@@ -185,27 +142,22 @@ border-radius:15px;padding:15px 18px;line-height:1.55;display:none;
 <div class="stat">Score: <span id="score">0</span></div>
 <div class="stat">Streak: <span id="streak">0</span></div>
 <div class="stat">Solved: <span id="solved">0</span></div>
-<button class="stat worksheet-launch" id="worksheetBtn">Worksheet Mode</button>
 </div>
 </div>
-<br>
-<div class="card" id="practiceCard">
+<div class="card">
 <div class="modebar">
 <button class="mode active" data-mode="easy">Foundation</button>
 <button class="mode" data-mode="medium">Core</button>
 <button class="mode" data-mode="hard">Challenge</button>
 </div>
-<br>
 <div class="content">
 <div class="question-head">
 <h2>What number does the arrow point to?</h2>
 <div class="difficulty-pill" id="pill">Foundation</div>
 </div>
-<br>
 <div class="numberline-wrap">
 <svg id="numberline" viewBox="0 0 900 210" aria-label="Fraction number line"></svg>
 </div>
-<br>
 <div class="answer-area">
 <div class="answer-label">Enter your answer as a fraction or mixed number</div>
 <div class="fraction-entry">
@@ -217,68 +169,18 @@ border-radius:15px;padding:15px 18px;line-height:1.55;display:none;
 </div>
 </div>
 <div class="mini">Leave the whole-number box empty for a proper or improper fraction.</div>
-<br>
 <div class="buttons">
 <button class="action check" id="check">Check answer</button>
 <button class="action secondary" id="hint">Show solution</button>
 <button class="action new" id="next">New question</button>
 </div>
 </div>
-<br>
 <div id="feedback" class="feedback"></div>
 <div id="solution" class="solution"></div>
 </div>
 </div>
-
-<br>
-<div class="card hidden" id="worksheetScreen">
-  <div class="worksheet-screen">
-    <div class="worksheet-head">
-      <div>
-        <span class="worksheet-kicker">Worksheet Mode</span>
-        <h2>Fraction Number Line Worksheet</h2>
-        <div class="subtitle">Generate printable number-line questions using the same levels as the practice app.</div>
-      </div>
-      <button class="worksheet-back" id="worksheetBackBtn">Back to Practice</button>
-    </div>
-
-    <div class="worksheet-options">
-      <div class="option-box">
-        <h3>Difficulty</h3>
-        <div class="segmented" id="worksheetDifficulty">
-          <button class="active" data-worksheet-mode="easy">Foundation</button>
-          <button data-worksheet-mode="medium">Core</button>
-          <button data-worksheet-mode="hard">Challenge</button>
-        </div>
-      </div>
-      <div class="option-box">
-        <h3>Number of Questions</h3>
-        <div class="segmented" id="worksheetSize">
-          <button data-worksheet-size="5">5</button>
-          <button class="active" data-worksheet-size="10">10</button>
-          <button data-worksheet-size="15">15</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="worksheet-generate">
-      <button class="action check" id="generateWorksheetBtn">Generate New Worksheet</button>
-    </div>
-
-    <div id="worksheetOutput" class="hidden">
-      <div class="worksheet-toolbar">
-        <button class="action secondary" id="revealAllWorksheetBtn">Reveal All Answers</button>
-        <button class="action secondary" id="printWorksheetBtn">Print Worksheet</button>
-        <button class="action secondary" id="printAnswerKeyBtn">Print Answer Key</button>
-      </div>
-      <div id="worksheetPreview"></div>
-    </div>
-  </div>
-</div>
-
 <div class="footer-note">Questions are generated automatically, so students can practise for as long as they like.</div>
 </div>
-<br>
 <script>
 const gcd=(a,b)=>{a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b]}return a||1}
 function frac(n,d=1){
@@ -292,7 +194,6 @@ const eq=(a,b)=>a.n===b.n&&a.d===b.d
 const val=a=>a.n/a.d
 const rand=(a,b)=>Math.floor(Math.random()*(b-a+1))+a
 const choice=a=>a[rand(0,a.length-1)]
-
 function mixedText(f){
 const sign=f.n<0?"−":"";
 const n=Math.abs(f.n), w=Math.floor(n/f.d), r=n%f.d;
@@ -312,63 +213,86 @@ ${whole?`<text x="${x-shift-8}" y="${y+4}" text-anchor="middle" font-size="23" f
 <line x1="${x+shift-13}" y1="${y-7}" x2="${x+shift+13}" y2="${y-7}" stroke="#162033" stroke-width="2"/>
 <text x="${x+shift}" y="${y+15}" text-anchor="middle" font-size="19" font-weight="700">${d}</text>`;
 }
-
 let mode="easy", current=null, score=0, streak=0, solved=0, answered=false;
 const used=new Set();
-let worksheetMode="easy", worksheetCount=10, worksheetQuestions=[];
-
 function signature(q){
 return [mode,q.step.n,q.step.d,q.leftIndex,q.rightIndex,q.arrowIndex,q.base.n,q.base.d].join("|");
 }
 
 function makeEasy(){
-// Same-denominator landmarks. Students first learn to count equal fractional intervals.
-const d=choice([4,5,6,8,10,12]);
-const step=frac(1,d);
-const total=rand(5,8);
-const leftIndex=rand(0,2);
-const gap=rand(2,Math.min(4,total-leftIndex));
-const rightIndex=leftIndex+gap;
-const arrowIndex=rand(leftIndex+1,rightIndex-1);
-const startNumerator=rand(0,Math.max(0,d-total-1));
-return {step,base:frac(startNumerator,d),total,leftIndex,rightIndex,arrowIndex};
+  // FOUNDATION
+  // Two consecutive fractions with the same denominator are shown.
+  // There is exactly one tick between them, so students solve by expanding
+  // both labelled fractions by 2. No fraction addition/subtraction/division is needed.
+  const d=choice([3,4,5,6,8,10,12]);
+  const a=rand(0,d-2);
+  const D=2*d;
+  const step=frac(1,D);
+  const total=4;
+  const leftIndex=0;
+  const rightIndex=2;
+  const arrowIndex=1;
+  const base=frac(2*a,D);
+  return {step,base,total,leftIndex,rightIndex,arrowIndex};
 }
 
 function makeMedium(){
-// Like textbook question 20: two simplified fractional landmarks, with 2–4 intervals between them.
-const d=choice([6,8,10,12,15,18,20,24]);
-const step=frac(1,d);
-const total=rand(5,7);
-const leftIndex=rand(1,2);
-const gap=rand(2,Math.min(4,total-leftIndex));
-const rightIndex=leftIndex+gap;
-const arrowIndex=rand(leftIndex+1,rightIndex-1);
-const maxBase=Math.max(0,d-total-2);
-let baseN=rand(0,maxBase);
-// Seek landmark fractions that simplify differently when possible.
-for(let i=0;i<40;i++){
-const trial=rand(0,maxBase);
-const L=add(frac(trial,d),mul(step,leftIndex));
-const R=add(frac(trial,d),mul(step,rightIndex));
-if(L.d!==R.d || L.d!==d){baseN=trial;break}
-}
-return {step,base:frac(baseN,d),total,leftIndex,rightIndex,arrowIndex};
+  // CORE
+  // Students expand simplified fractions to a larger common denominator,
+  // then count tick marks. No fraction addition/subtraction/division is required.
+  const D=choice([8,10,12,15,18,20,24]);
+  let leftN=1, rightN=3, gap=2;
+
+  for(let tries=0;tries<200;tries++){
+    gap=rand(2,4);
+    leftN=rand(1,D-gap-1);
+    rightN=leftN+gap;
+
+    const L=frac(leftN,D);
+    const R=frac(rightN,D);
+    const needsExpansion=(L.d!==D || R.d!==D);
+    const usefulPair=(L.d!==R.d || (L.d!==D && R.d!==D));
+
+    if(needsExpansion && usefulPair) break;
+  }
+
+  const step=frac(1,D);
+  const total=Math.max(5,gap+2);
+  const leftIndex=1;
+  const rightIndex=leftIndex+gap;
+  const arrowIndex=rand(leftIndex+1,rightIndex-1);
+  const base=frac(leftN-leftIndex,D);
+  return {step,base,total,leftIndex,rightIndex,arrowIndex};
 }
 
 function makeHard(){
-// Like textbook question 27: more intervals, less obvious step, and possible mixed numbers.
-const d=choice([8,10,12,14,16,18,20,24]);
-const step=frac(choice([1,1,1,2,3]),d);
-const total=rand(6,8);
-const leftIndex=rand(0,1);
-const gap=rand(4,Math.min(6,total-leftIndex));
-const rightIndex=leftIndex+gap;
-const arrowIndex=rand(leftIndex+1,rightIndex-1);
-const baseWhole=choice([0,0,0,1]);
-const baseN=baseWhole*d + rand(0,Math.max(0,d-1));
-return {step,base:frac(baseN,d),total,leftIndex,rightIndex,arrowIndex};
-}
+  // CHALLENGE
+  // Larger denominators and more intervals, but still only equivalent fractions,
+  // reducing, comparing, and counting tick marks.
+  const D=choice([18,20,24,28,30,32,36]);
+  let leftN=2, rightN=7, gap=5;
 
+  for(let tries=0;tries<300;tries++){
+    gap=rand(3,6);
+    leftN=rand(1,D-gap-1);
+    rightN=leftN+gap;
+
+    const L=frac(leftN,D);
+    const R=frac(rightN,D);
+    const bothNeedExpansion=(L.d!==D && R.d!==D);
+    const differentReducedForms=(L.d!==R.d);
+
+    if(bothNeedExpansion && differentReducedForms) break;
+  }
+
+  const step=frac(1,D);
+  const total=Math.max(7,gap+2);
+  const leftIndex=1;
+  const rightIndex=leftIndex+gap;
+  const arrowIndex=rand(leftIndex+1,rightIndex-1);
+  const base=frac(leftN-leftIndex,D);
+  return {step,base,total,leftIndex,rightIndex,arrowIndex};
+}
 function newQuestion(){
 let q, tries=0;
 do{
@@ -384,7 +308,6 @@ document.getElementById("solution").className="solution";
 document.getElementById("solution").innerHTML="";
 render(q);
 }
-
 function render(q){
 const svg=document.getElementById("numberline");
 const x0=80,x1=820,y=112;
@@ -412,7 +335,6 @@ s+=svgFraction(x0+q.leftIndex*dx,y+56,leftVal);
 s+=svgFraction(x0+q.rightIndex*dx,y+56,rightVal);
 svg.innerHTML=s;
 }
-
 function parseAnswer(){
 const wRaw=document.getElementById("whole").value.trim();
 const nRaw=document.getElementById("num").value.trim();
@@ -428,23 +350,28 @@ function target(){return add(current.base,mul(current.step,current.arrowIndex))}
 function clearInputs(){["whole","num","den"].forEach(id=>document.getElementById(id).value="")}
 
 function showSolution(){
-const q=current;
-const L=add(q.base,mul(q.step,q.leftIndex));
-const R=add(q.base,mul(q.step,q.rightIndex));
-const gap=q.rightIndex-q.leftIndex;
-const jump=sub(R,L);
-const t=target();
-const fromLeft=q.arrowIndex-q.leftIndex;
-const box=document.getElementById("solution");
-box.innerHTML=`
-<strong>Step 1:</strong> The distance from ${mixedText(L)} to ${mixedText(R)} is ${mixedText(jump)}.<br>
-<strong>Step 2:</strong> That distance is divided into ${gap} equal intervals, so each interval is ${mixedText(q.step)}.<br>
-<strong>Step 3:</strong> The arrow is ${fromLeft} interval${fromLeft===1?"":"s"} to the right of ${mixedText(L)}.<br>
-<strong>Answer:</strong> ${mixedText(t)}.
-`;
-box.className="solution show";
-}
+  const q=current;
+  const L=add(q.base,mul(q.step,q.leftIndex));
+  const R=add(q.base,mul(q.step,q.rightIndex));
+  const t=target();
+  const gap=q.rightIndex-q.leftIndex;
+  const fromLeft=q.arrowIndex-q.leftIndex;
+  const D=q.step.d;
 
+  const leftExpanded=L.n*(D/L.d);
+  const rightExpanded=R.n*(D/R.d);
+  const targetExpanded=leftExpanded+fromLeft;
+
+  const box=document.getElementById("solution");
+  box.innerHTML=`
+    <strong>Step 1:</strong> Count the equal spaces between the two labelled fractions. There are ${gap}.<br>
+    <strong>Step 2:</strong> Expand the labelled fractions so their numerators are ${gap} apart:
+    ${mixedText(L)} = ${leftExpanded}/${D} and ${mixedText(R)} = ${rightExpanded}/${D}.<br>
+    <strong>Step 3:</strong> The arrow is ${fromLeft} space${fromLeft===1?"":"s"} to the right of ${mixedText(L)}, so it points to ${targetExpanded}/${D}.<br>
+    <strong>Answer:</strong> ${mixedText(t)}.
+  `;
+  box.className="solution show";
+}
 document.getElementById("check").addEventListener("click",()=>{
 if(answered) return;
 const a=parseAnswer(), f=document.getElementById("feedback");
@@ -463,7 +390,8 @@ document.getElementById("solved").textContent=solved;
 }else{
 streak=0;document.getElementById("streak").textContent=streak;
 f.className="feedback bad";
-f.textContent="Not quite. Count the number of equal intervals between the two labelled values.";
+f.textContent="Not quite. Try expanding the labelled fractions until the numerator difference matches the number of spaces between them.";
+
 }
 });
 document.getElementById("hint").addEventListener("click",showSolution);
@@ -477,167 +405,6 @@ newQuestion();
 ["whole","num","den"].forEach(id=>document.getElementById(id).addEventListener("keydown",e=>{
 if(e.key==="Enter") document.getElementById("check").click();
 }));
-
-
-function worksheetModeName(m){
-return m==="easy"?"Foundation":m==="medium"?"Core":"Challenge";
-}
-
-function targetFor(q){return add(q.base,mul(q.step,q.arrowIndex));}
-
-function worksheetSignature(q,m){
-return [m,q.step.n,q.step.d,q.leftIndex,q.rightIndex,q.arrowIndex,q.base.n,q.base.d].join("|");
-}
-
-function makeWorksheetQuestion(){
-return worksheetMode==="easy"?makeEasy():worksheetMode==="medium"?makeMedium():makeHard();
-}
-
-function generateWorksheetSet(){
-const localUsed=new Set();
-const generated=[];
-for(let i=0;i<worksheetCount;i++){
-let q,tries=0,key;
-do{
-q=makeWorksheetQuestion();
-key=worksheetSignature(q,worksheetMode);
-tries++;
-}while(localUsed.has(key)&&tries<300);
-localUsed.add(key);
-generated.push(q);
-}
-worksheetQuestions=generated;
-renderWorksheet();
-}
-
-function worksheetNumberLineSVG(q,index){
-const x0=70,x1=830,y=92;
-const dx=(x1-x0)/q.total;
-const leftVal=add(q.base,mul(q.step,q.leftIndex));
-const rightVal=add(q.base,mul(q.step,q.rightIndex));
-const arrowId=`worksheetArrow${index}`;
-const lineId=`worksheetLineArrow${index}`;
-let s=`<svg viewBox="0 0 900 170" aria-label="Fraction number line question ${index+1}">
-<defs>
-<marker id="${arrowId}" markerWidth="11" markerHeight="11" refX="5.5" refY="5.5" orient="auto"><path d="M0,0 L11,5.5 L0,11 z" fill="#e84d5b"></path></marker>
-<marker id="${lineId}" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#162033"></path></marker>
-</defs>
-<line x1="${x0-22}" y1="${y}" x2="${x1+22}" y2="${y}" stroke="#162033" stroke-width="4" marker-end="url(#${lineId})" stroke-linecap="round"/>`;
-for(let i=0;i<=q.total;i++){
-const x=x0+i*dx;
-s+=`<line x1="${x}" y1="${y-2}" x2="${x}" y2="${y+20}" stroke="#162033" stroke-width="3"/>`;
-}
-const ax=x0+q.arrowIndex*dx;
-s+=`<line x1="${ax}" y1="20" x2="${ax}" y2="${y-18}" stroke="#e84d5b" stroke-width="4" marker-end="url(#${arrowId})"/>`;
-s+=svgFraction(x0+q.leftIndex*dx,y+53,leftVal);
-s+=svgFraction(x0+q.rightIndex*dx,y+53,rightVal);
-s+='</svg>';
-return s;
-}
-
-function worksheetPreviewQuestionHTML(q,index){
-const answer=mixedText(targetFor(q));
-return `<div class="worksheet-question">
-<div class="worksheet-qhead"><span>${index+1}.</span><span>What number does the arrow point to?</span></div>
-<div class="worksheet-numberline">${worksheetNumberLineSVG(q,index)}</div>
-<div class="worksheet-answer-line"></div>
-<div class="worksheet-reveal-row">
-<button class="worksheet-reveal-btn" data-reveal-answer="${index}">Reveal Answer</button>
-<div class="worksheet-revealed-answer hidden" data-answer="${index}">Answer: ${answer}</div>
-</div>
-</div>`;
-}
-
-function setWorksheetAnswerVisible(index,visible=true){
-const answer=document.querySelector(`[data-answer="${index}"]`);
-const button=document.querySelector(`[data-reveal-answer="${index}"]`);
-if(!answer||!button)return;
-answer.classList.toggle('hidden',!visible);
-button.textContent=visible?'Hide Answer':'Reveal Answer';
-}
-
-function renderWorksheet(){
-const preview=document.getElementById('worksheetPreview');
-preview.innerHTML=`<div class="worksheet-sheet">
-<h2>Fraction Number Line Challenge</h2>
-<div class="worksheet-meta">${worksheetModeName(worksheetMode)} • ${worksheetCount} questions</div>
-<div class="worksheet-student-lines"><span>Name:</span><span>Date:</span></div>
-<div class="worksheet-list">${worksheetQuestions.map((q,i)=>worksheetPreviewQuestionHTML(q,i)).join('')}</div>
-</div>`;
-preview.querySelectorAll('[data-reveal-answer]').forEach(b=>b.addEventListener('click',()=>{
-const index=Number(b.dataset.revealAnswer);
-const answer=preview.querySelector(`[data-answer="${index}"]`);
-setWorksheetAnswerVisible(index,answer.classList.contains('hidden'));
-}));
-const revealAll=document.getElementById('revealAllWorksheetBtn');
-revealAll.textContent='Reveal All Answers';
-revealAll.dataset.revealed='false';
-document.getElementById('worksheetOutput').classList.remove('hidden');
-}
-
-function toggleAllWorksheetAnswers(){
-const btn=document.getElementById('revealAllWorksheetBtn');
-const reveal=btn.dataset.revealed!=='true';
-worksheetQuestions.forEach((_,i)=>setWorksheetAnswerVisible(i,reveal));
-btn.dataset.revealed=String(reveal);
-btn.textContent=reveal?'Hide All Answers':'Reveal All Answers';
-}
-
-function worksheetPrintQuestionHTML(q,index,answerKey=false){
-const answer=mixedText(targetFor(q));
-return `<div class="worksheet-question">
-<div class="worksheet-qhead"><span>${index+1}.</span><span>What number does the arrow point to?</span></div>
-<div class="worksheet-numberline">${worksheetNumberLineSVG(q,index)}</div>
-${answerKey?`<div class="printed-answer"><strong>Answer:</strong> ${answer}</div>`:'<div class="worksheet-answer-line"></div>'}
-</div>`;
-}
-
-function worksheetPrintHTML(answerKey=false){
-const title=answerKey?'Fraction Number Line — Answer Key':'Fraction Number Line Challenge';
-const subtitle=`${worksheetModeName(worksheetMode)} • ${worksheetCount} questions`;
-const items=worksheetQuestions.map((q,i)=>worksheetPrintQuestionHTML(q,i,answerKey)).join('');
-return `<!doctype html><html><head><meta charset="utf-8"><title>${title}</title><style>
-*{box-sizing:border-box}body{font-family:Arial,Helvetica,sans-serif;color:#111;margin:0}main{max-width:780px;margin:0 auto;padding:24px 30px}h1{text-align:center;margin:0 0 4px;font-size:24px}.meta{text-align:center;color:#444;font-weight:700;margin-bottom:20px}.student{display:flex;gap:32px;margin-bottom:22px;font-weight:700}.student span{flex:1;border-bottom:1px solid #555;padding-bottom:4px}.worksheet-list{display:grid;gap:22px}.worksheet-question{break-inside:avoid;border-top:1px solid #ddd;padding-top:16px}.worksheet-question:first-child{border-top:0;padding-top:0}.worksheet-qhead{display:flex;gap:8px;font-weight:700;margin-bottom:6px}.worksheet-numberline{border:1px solid #ddd;border-radius:10px;padding:5px 8px}.worksheet-numberline svg{width:100%;height:132px;overflow:visible}.worksheet-answer-line{border-bottom:1px solid #666;height:25px;margin-top:8px}.printed-answer{font-size:16px;margin-top:8px}.worksheet-numberline text{font-family:Arial,Helvetica,sans-serif}@page{margin:10mm}@media print{main{padding:0}}
-</style></head><body><main><h1>${title}</h1><div class="meta">${subtitle}</div>${answerKey?'':'<div class="student"><span>Name:</span><span>Date:</span></div>'}<div class="worksheet-list">${items}</div></main><script>window.onload=()=>{window.print();window.onafterprint=()=>window.close()}<\/script></body></html>`;
-}
-
-function printWorksheet(answerKey=false){
-if(!worksheetQuestions.length)generateWorksheetSet();
-const w=window.open('','_blank');
-if(!w){alert('Please allow pop-ups so the worksheet can be printed.');return;}
-w.document.open();w.document.write(worksheetPrintHTML(answerKey));w.document.close();
-}
-
-function openWorksheetMode(){
-document.getElementById('practiceCard').classList.add('hidden');
-document.getElementById('worksheetScreen').classList.remove('hidden');
-if(!worksheetQuestions.length)generateWorksheetSet();
-window.scrollTo({top:0,behavior:'smooth'});
-}
-
-function closeWorksheetMode(){
-document.getElementById('worksheetScreen').classList.add('hidden');
-document.getElementById('practiceCard').classList.remove('hidden');
-window.scrollTo({top:0,behavior:'smooth'});
-}
-
-document.getElementById('worksheetBtn').addEventListener('click',openWorksheetMode);
-document.getElementById('worksheetBackBtn').addEventListener('click',closeWorksheetMode);
-document.getElementById('generateWorksheetBtn').addEventListener('click',generateWorksheetSet);
-document.getElementById('revealAllWorksheetBtn').addEventListener('click',toggleAllWorksheetAnswers);
-document.getElementById('printWorksheetBtn').addEventListener('click',()=>printWorksheet(false));
-document.getElementById('printAnswerKeyBtn').addEventListener('click',()=>printWorksheet(true));
-document.querySelectorAll('[data-worksheet-mode]').forEach(b=>b.addEventListener('click',()=>{
-worksheetMode=b.dataset.worksheetMode;
-document.querySelectorAll('[data-worksheet-mode]').forEach(x=>x.classList.toggle('active',x===b));
-generateWorksheetSet();
-}));
-document.querySelectorAll('[data-worksheet-size]').forEach(b=>b.addEventListener('click',()=>{
-worksheetCount=Number(b.dataset.worksheetSize);
-document.querySelectorAll('[data-worksheet-size]').forEach(x=>x.classList.toggle('active',x===b));
-generateWorksheetSet();
-}));
-
 newQuestion();
 </script>
 </body>
